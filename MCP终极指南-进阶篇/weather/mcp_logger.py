@@ -11,6 +11,8 @@ LOG_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "mcp_io.log
 # --- End Configuration ---
 
 # --- Argument Parsing ---
+#  # 1. 创建解析器
+# argparse.ArgumentParser 在Python中创建了一个命令行参数解析器对象
 parser = argparse.ArgumentParser(
     description="Wrap a command, passing STDIN/STDOUT verbatim while logging them.",
     usage="%(prog)s <command> [args...]"
