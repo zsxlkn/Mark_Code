@@ -18,15 +18,18 @@ parser = argparse.ArgumentParser(
     usage="%(prog)s <command> [args...]"
 )
 # Capture the command and all subsequent arguments
+# 贪婪捕获：会吃掉所有剩余的参数
 parser.add_argument('command', nargs=argparse.REMAINDER,
                     help='The command and its arguments to execute.')
 
 open(LOG_FILE, 'w', encoding='utf-8')
 
-if len(sys.argv) == 1:
+if len(sys.argv) == 1:  # 只有脚本名，没有其他参数
     parser.print_help(sys.stderr)
     sys.exit(1)
 
+
+# # 解析参数
 args = parser.parse_args()
 
 if not args.command:
