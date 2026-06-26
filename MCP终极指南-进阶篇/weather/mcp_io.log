@@ -11,3 +11,222 @@ MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
 ->MCP输入: {"method":"tools/call","params":{"name":"get_forecast","arguments":{"latitude":38.9072,"longitude":-77.0369},"_meta":{"claudecode/toolUseId":"call_00_srcWnvSKhFplsC13ihhD3882","progressToken":4}},"jsonrpc":"2.0","id":4}
 MCP输出->: {"jsonrpc":"2.0","id":4,"result":{"content":[{"type":"text","text":"\nOvernight:\nTemperature: 69°F\nWind: 7 mph S\nForecast: Mostly cloudy, with a low around 69. South wind around 7 mph.\n\n---\n\nFriday:\nTemperature: 92°F\nWind: 6 mph W\nForecast: A chance of showers and thunderstorms between 3pm and 5pm, then a chance of showers and thunderstorms. Partly sunny, with a high near 92. West wind around 6 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible.\n\n---\n\nFriday Night:\nTemperature: 68°F\nWind: 1 to 5 mph NE\nForecast: Showers and thunderstorms likely before 8pm, then a chance of showers and thunderstorms between 8pm and 10pm, then showers and thunderstorms likely. Mostly cloudy, with a low around 68. Northeast wind 1 to 5 mph. Chance of precipitation is 70%. New rainfall amounts between a tenth and quarter of an inch possible.\n\n---\n\nSaturday:\nTemperature: 82°F\nWind: 1 to 5 mph E\nForecast: Rain showers likely before 11am, then showers and thunderstorms likely between 11am and 2pm, then a chance of showers and thunderstorms between 2pm and 4pm, then showers and thunderstorms likely between 4pm and 5pm, then a chance of showers and thunderstorms. Mostly cloudy, with a high near 82. East wind 1 to 5 mph. Chance of precipitation is 70%. New rainfall amounts between a tenth and quarter of an inch possible.\n\n---\n\nSaturday Night:\nTemperature: 68°F\nWind: 1 to 5 mph NE\nForecast: A chance of showers and thunderstorms before 8pm, then showers and thunderstorms likely. Mostly cloudy, with a low around 68. Northeast wind 1 to 5 mph. Chance of precipitation is 60%.\n"}],"isError":false}}
 --- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}
+--- STDIN stream closed to target ---
+->MCP输入: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{},"elicitation":{}},"clientInfo":{"name":"claude-code","title":"Claude Code","version":"2.1.193","description":"Anthropic's agentic coding tool","websiteUrl":"https://claude.com/claude-code"}},"jsonrpc":"2.0","id":0}
+MCP输出->: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"weather","version":"1.6.0"}}}
+->MCP输入: {"method":"notifications/initialized","jsonrpc":"2.0"}
+->MCP输入: {"method":"tools/list","jsonrpc":"2.0","id":1}
+MCP输出->: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"get_alerts","description":"Get weather alerts for a US state.\n\nArgs:\n    state: Two-letter US state code (e.g. CA, NY)\n","inputSchema":{"properties":{"state":{"title":"State","type":"string"}},"required":["state"],"title":"get_alertsArguments","type":"object"}},{"name":"get_forecast","description":"Get weather forecast for a location.\n\nArgs:\n    latitude: Latitude of the location\n    longitude: Longitude of the location\n","inputSchema":{"properties":{"latitude":{"title":"Latitude","type":"number"},"longitude":{"title":"Longitude","type":"number"}},"required":["latitude","longitude"],"title":"get_forecastArguments","type":"object"}}]}}
+->MCP输入: {"method":"prompts/list","jsonrpc":"2.0","id":2}
+->MCP输入: {"method":"resources/list","jsonrpc":"2.0","id":3}
+MCP输出->: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}}
+MCP输出->: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}}

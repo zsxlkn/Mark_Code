@@ -1,0 +1,21 @@
+
+===== REQUEST (model=claude-opus-4-8 → deepseek-chat, stream=True, msgs=2) =====
+
+===== REQUEST (model=claude-opus-4-8 → deepseek-chat, stream=True, msgs=3) =====
+DeepSeek STATUS: 200
+DeepSeek STATUS: 200
+[Δ] '{"'
+[Δ] 'title'
+[Δ] '":'
+[Δ] ' "'
+[Δ] '中国'
+[Δ] '首都'
+[Δ] '的位置'
+[Δ] '"}'
+[Δ] '中国的'
+[Δ] '首'
+[Δ] '都是'
+[Δ] '**'
+[Δ] '北京'
+[Δ] '**'
+[Δ] '。'
