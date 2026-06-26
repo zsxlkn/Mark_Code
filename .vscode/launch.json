@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "调试当前 Python 文件",
+            "name": "🐍 调试当前文件",
             "type": "debugpy",
             "request": "launch",
             "program": "${file}",
@@ -11,7 +11,8 @@
             "env": {
                 "PYTHONPATH": "${workspaceFolder}"
             },
-            "python": "C:\\Users\\13774\\.conda\\envs\\torch251\\python.exe"
+            "python": "C:\\Users\\13774\\.conda\\envs\\torch251\\python.exe",
+            "justMyCode": false
         },
         {
             "name": "调试 mcp_logger.py",
@@ -26,18 +27,6 @@
                 "run",
                 "weather.py"
             ],
-            "cwd": "${workspaceFolder}",
-            "env": {
-                "PYTHONPATH": "${workspaceFolder}"
-            },
-            "python": "C:\\Users\\13774\\.conda\\envs\\torch251\\python.exe"
-        },
-        {
-            "name": "调试 ordinary.py",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}\\MCP终极指南-进阶篇\\weather\\ordinary.py",
-            "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
             "env": {
                 "PYTHONPATH": "${workspaceFolder}"

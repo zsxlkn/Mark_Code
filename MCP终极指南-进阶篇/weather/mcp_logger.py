@@ -6,43 +6,10 @@ import threading
 import argparse
 import os
 
-# --- Configuration ---
-LOG_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "mcp_io.log")
-# --- End Configuration ---
-
-# --- Argument Parsing ---
-#  # 1. 创建解析器
-# argparse.ArgumentParser 在Python中创建了一个命令行参数解析器对象
-parser = argparse.ArgumentParser(
-    description="Wrap a command, passing STDIN/STDOUT verbatim while logging them.",
-    usage="%(prog)s <command> [args...]"
-)
-# Capture the command and all subsequent arguments
-# 贪婪捕获：会吃掉所有剩余的参数
-parser.add_argument('command', nargs=argparse.REMAINDER,
-                    help='The command and its arguments to execute.')
-
-open(LOG_FILE, 'w', encoding='utf-8')
-
-if len(sys.argv) == 1:  # 只有脚本名，没有其他参数
-    parser.print_help(sys.stderr)
-    sys.exit(1)
-
-
-# # 解析参数
-args = parser.parse_args()
-
-if not args.command:
-    print("Error: No command provided.", file=sys.stderr)
-    parser.print_help(sys.stderr)
-    sys.exit(1)
-
-target_command = args.command
-# --- End Argument Parsing ---
 
 # --- I/O Forwarding Functions ---
 # These will run in separate threads
-
+# forward_and_log_stdin 关闭的是“给子进程的管道入口”；forward_and_log_stdout 不关闭的是“当前 logger 对外的标准输出”
 def forward_and_log_stdin(proxy_stdin, target_stdin, log_file):
     """Reads from proxy's stdin, logs it, writes to target's stdin."""
     try:
@@ -59,7 +26,7 @@ def forward_and_log_stdin(proxy_stdin, target_stdin, log_file):
                  line_str = f"[Non-UTF8 data, {len(line_bytes)} bytes]\n" # Log representation
 
             # Log with prefix
-            log_file.write(f"输入: {line_str}")
+            log_file.write(f"想MCP输入: {line_str}")
             log_file.flush() # Ensure log is written promptly
 
             # Write the original bytes to the target process's stdin
@@ -73,10 +40,12 @@ def forward_and_log_stdin(proxy_stdin, target_stdin, log_file):
             log_file.flush()
         except: pass # Avoid errors trying to log errors if log file is broken
 
+    # finally 不是凭空强制执行的。它只有在这个线程离开 try 块时才会执行
     finally:
         # Important: Close the target's stdin when proxy's stdin closes
         # This signals EOF to the target process (like test.sh's read loop)
         try:
+            # 没有输入了，EOF
             target_stdin.close()
             log_file.write("--- STDIN stream closed to target ---\n")
             log_file.flush()
@@ -103,7 +72,7 @@ def forward_and_log_stdout(target_stdout, proxy_stdout, log_file):
                  line_str = f"[Non-UTF8 data, {len(line_bytes)} bytes]\n"
 
             # Log with prefix
-            log_file.write(f"输出: {line_str}")
+            log_file.write(f"MCP的输出: {line_str}")
             log_file.flush()
 
             # Write the original bytes to the script's actual stdout
@@ -120,6 +89,40 @@ def forward_and_log_stdout(target_stdout, proxy_stdout, log_file):
             log_file.flush()
         except: pass
         # Don't close proxy_stdout (sys.stdout) here
+
+
+
+# --- Configuration ---
+LOG_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)), "mcp_io.log")
+# --- End Configuration ---
+
+# --- Argument Parsing ---
+#  # 1. 创建解析器
+# argparse.ArgumentParser 在Python中创建了一个命令行参数解析器对象
+parser = argparse.ArgumentParser(
+    description="Wrap a command, passing STDIN/STDOUT verbatim while logging them.",
+    usage="%(prog)s <command> [args...]"
+)
+# Capture the command and all subsequent arguments
+# 贪婪捕获：会吃掉所有剩余的参数
+parser.add_argument('command', nargs=argparse.REMAINDER,
+                    help='The command and its arguments to execute.')
+
+if len(sys.argv) == 1:  # 只有脚本名，没有其他参数
+    parser.print_help(sys.stderr)
+    sys.exit(1)
+
+
+# # 解析参数
+args = parser.parse_args()
+
+if not args.command:
+    print("Error: No command provided.", file=sys.stderr)
+    parser.print_help(sys.stderr)
+    sys.exit(1)
+
+target_command = args.command
+# --- End Argument Parsing ---
 
 # --- Main Execution ---
 process = None
