@@ -26,7 +26,7 @@ def forward_and_log_stdin(proxy_stdin, target_stdin, log_file):
                  line_str = f"[Non-UTF8 data, {len(line_bytes)} bytes]\n" # Log representation
 
             # Log with prefix
-            log_file.write(f"想MCP输入: {line_str}")
+            log_file.write(f"->MCP输入: {line_str}")
             log_file.flush() # Ensure log is written promptly
 
             # Write the original bytes to the target process's stdin
@@ -72,7 +72,7 @@ def forward_and_log_stdout(target_stdout, proxy_stdout, log_file):
                  line_str = f"[Non-UTF8 data, {len(line_bytes)} bytes]\n"
 
             # Log with prefix
-            log_file.write(f"MCP的输出: {line_str}")
+            log_file.write(f"MCP输出->: {line_str}")
             log_file.flush()
 
             # Write the original bytes to the script's actual stdout
