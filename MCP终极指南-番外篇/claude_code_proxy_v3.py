@@ -42,11 +42,12 @@ class ConversationLogger:
 
     def __init__(self, log_file="llm.log"):
         self.log_file = log_file
-        # 启动时清空 (改成 "a" 就是追加模式)
+        # 启动时清空 (改成 "a" 就是追加模式)，启动时用 "w" 模式打开然后立即关闭，这是清空文件的惯用写法。
         open(self.log_file, "w", encoding="utf-8").close()
-        self.turn = 0
+        self.turn = 0 # self.turn 用来给每个回合编号。
 
     def _write(self, text: str):
+        # _write 同时写文件和控制台
         with open(self.log_file, "a", encoding="utf-8") as f:
             f.write(text + "\n")
         print(text)
@@ -60,6 +61,13 @@ class ConversationLogger:
 
     def log_request(self, body: dict, requested_model: str, deepseek_model: str):
         """记录一个完整的请求"""
+        """
+        body — Claude Code 发过来的完整请求体（原始 JSON，一个 Python dict）
+
+        lines = [] 是核心设计决策。整个函数不直接一行一行写文件，而是先把所有内容收集到 lines 列表里，
+        最后一次性调用 self._write("\n".join(lines)) 写入。
+        好处是：文件写入是一个原子操作，不会出现两个并发请求的日志行互相穿插的情况。
+        """
         self.turn += 1
         ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -71,9 +79,11 @@ class ConversationLogger:
 
         # ── 顶层参数 ──
         lines.append(self._section("REQUEST META"))
+        # body 是完整的请求，但 messages、system、tools、tool_choice 这四个字段内容巨大，
+        # 后面各有专门区段处理。这里用字典推导式把它们过滤掉，只留下轻量的元数据字段
         meta = {k: v for k, v in body.items()
                 if k not in ("messages", "system", "tools", "tool_choice")}
-        lines.append(json.dumps(meta, ensure_ascii=False, indent=2))
+        lines.append(json.dumps(meta, ensure_ascii=False, indent=2)) # json.dumps 在这里的作用是将 Python 对象（这里是字符串 char）转换成 JSON 格式的字符串,让中文直接以 UTF-8 输出
 
         # ── System Prompt (含 MCP / 环境信息) ──
         system = body.get("system")
@@ -338,14 +348,7 @@ async def proxy_messages(request: Request):
 
             try:
                 async with httpx.AsyncClient(timeout=120) as client:
-                    async with client.stream(
-                        "POST", DEEPSEEK_URL,
-                        json=payload,
-                        headers={
-                            "Authorization": auth_header,
-                            "Content-Type": "application/json",
-                        },
-                    ) as resp:
+                    async with client.stream( "POST", DEEPSEEK_URL, json=payload,headers={"Authorization": auth_header, "Content-Type": "application/json", }, ) as resp:
                         if resp.status_code != 200:
                             err_text = await resp.aread()
                             err_str = err_text.decode("utf-8", errors="replace")
@@ -365,7 +368,7 @@ async def proxy_messages(request: Request):
                                 except json.JSONDecodeError:
                                     continue
 
-                                if chunk.get("usage"):
+                                if chunk.get("usage"): # 最后一个 chunk（带 finish_reason 的那个）
                                     usage_data = chunk["usage"]
                                     output_tokens = usage_data.get("completion_tokens", 0)
 
